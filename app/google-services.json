@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1076205801781",
+    "firebase_url": "https://barkergram-48bb2.firebaseio.com",
+    "project_id": "barkergram-48bb2",
+    "storage_bucket": "barkergram-48bb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076205801781:android:48c9dd7a5228202b807c7c",
+        "android_client_info": {
+          "package_name": "com.example.barkergram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076205801781-2ohkhb9107ifft4boakcgup29jromi4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnmSjywUCqq4M1HioefwzINXhNi8EH5no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076205801781-2ohkhb9107ifft4boakcgup29jromi4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
