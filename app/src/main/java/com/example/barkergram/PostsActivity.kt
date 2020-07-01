@@ -7,22 +7,35 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.barkergram.models.Post
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.core.Query
 import com.google.firebase.firestore.proto.TargetGlobal
+import kotlinx.android.synthetic.main.activity_posts.*
 
 private const val TAG = "PostsActivity"
+private const val EXTRA_USERNAME = ""
 
-class PostsActivity : AppCompatActivity() {
+open class PostsActivity : AppCompatActivity() {
 
 
     private lateinit var firestoreDb: FirebaseFirestore
+    private lateinit var posts: MutableList<Post>
+    private lateinit var adapter: PostsAdapter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posts)
 
+    posts = mutableListOf()
+
+    adapter = PostsAdapter(this, posts)
+
+    rvPosts.adapter = adapter
+    rvPosts.layoutManager = LinearLayoutManager(this)
 
 
 
@@ -40,6 +53,9 @@ class PostsActivity : AppCompatActivity() {
             }
 
             val postList = snapshot.toObjects(Post::class.java)
+            posts.clear()
+            posts.addAll(postList)
+            adapter.notifyDataSetChanged()
 
             for (post in postList){
                 Log.i(TAG, "Post: $post")
@@ -57,6 +73,7 @@ class PostsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_profile){
             val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra(EXTRA_USERNAME, "Rowdy_the_Good_Boy")
             startActivity(intent)
 
 
