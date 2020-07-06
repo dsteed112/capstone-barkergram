@@ -17,7 +17,7 @@ import com.google.firebase.firestore.proto.TargetGlobal
 import kotlinx.android.synthetic.main.activity_posts.*
 
 private const val TAG = "PostsActivity"
-private const val EXTRA_USERNAME = "EXTRA_USERNAME"
+const val EXTRA_USERNAME = "EXTRA_USERNAME"
 
 open class PostsActivity : AppCompatActivity() {
 
